@@ -1,0 +1,8 @@
+title = "atrium demo"
+
+[extend]
+useDefault = true
+
+[allowlist]
+description = "Committed UI screenshots are binary fixtures from a local demo run."
+paths = ['''docs/screenshots/.*''']
