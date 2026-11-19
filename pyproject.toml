@@ -1,0 +1,50 @@
+[project]
+name = "atrium"
+version = "0.1.0"
+description = "Fictional personal AI team: a chief of staff routes work, and consequential actions wait for the owner."
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "MIT" }
+authors = [{ name = "Tishan Perera" }]
+keywords = ["personal-ai", "approval-queue", "demo", "multi-agent"]
+classifiers = [
+  "License :: OSI Approved :: MIT License",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+]
+dependencies = []
+
+[project.optional-dependencies]
+dev = ["ruff==0.15.0"]
+
+[project.urls]
+Homepage = "https://github.com/tishan-perera/personal-ai-os-demo"
+Repository = "https://github.com/tishan-perera/personal-ai-os-demo"
+
+[project.scripts]
+atrium = "atrium.cli:main"
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+include = ["atrium*"]
+
+[tool.setuptools.package-data]
+atrium = ["static/*"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+src = ["atrium", "tests"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/*" = ["E501"]
+
+[tool.ruff.format]
+quote-style = "double"

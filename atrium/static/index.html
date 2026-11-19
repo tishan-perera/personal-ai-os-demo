@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Atrium — fictional personal AI team</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <div class="shell">
+    <header class="top">
+      <div class="brand">
+        <p class="kicker">Personal AI team</p>
+        <h1>Atrium</h1>
+      </div>
+      <p class="banner">
+        Fictional demo. Invented seats and requests. Not a real inbox, ledger, or application.
+      </p>
+      <p id="mode" class="mode">Deterministic demo</p>
+    </header>
+    <div class="columns">
+      <aside class="rail" aria-label="Roster">
+        <p class="rail-label">Fictional seats</p>
+        <div id="roster"></div>
+      </aside>
+      <section class="desk" aria-label="Desk">
+        <div id="thread" class="thread" aria-live="polite"></div>
+        <form id="composer">
+          <div id="prompts" class="prompts"></div>
+          <div class="composer-row">
+            <label class="sr" for="request">Request</label>
+            <input id="request" name="request" maxlength="2000" autocomplete="off" placeholder="Ask the chief of staff" required>
+            <button type="submit" id="ask">Ask</button>
+          </div>
+          <p id="error" class="error" role="alert"></p>
+        </form>
+      </section>
+      <aside class="gate" aria-label="Approval queue">
+        <div class="gate-head">
+          <h2>Approval queue</h2>
+          <button type="button" id="reset">Reset demo</button>
+        </div>
+        <div id="proposals"></div>
+        <h2 class="section">Audit log</h2>
+        <ol id="audit"></ol>
+        <h2 class="section">Demo world</h2>
+        <dl id="flags"></dl>
+      </aside>
+    </div>
+  </div>
+  <script src="/app.js"></script>
+</body>
+</html>
